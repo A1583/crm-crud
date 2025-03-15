@@ -1,0 +1,126 @@
+{
+  "info": {
+    "_postman_id": "9c64bd1c-7cfc-4250-a895-d3fc2116643c",
+    "name": "crm-crud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25768865"
+  },
+  "item": [
+    {
+      "name": "customers",
+      "item": [
+        {
+          "name": "create",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"customerRequests\": [\n        {\n            \"firstName\": \"ก้อง\",\n            \"lastName\": \"สุวรรณ\",\n            \"customerDate\": \"2024-03-10\",\n            \"isVip\": true,\n            \"statusCode\": \"ACTIVE\"\n        },\n        {\n            \"firstName\": \"มณี\",\n            \"lastName\": \"พรรณราย\",\n            \"customerDate\": \"2023-11-25\",\n            \"isVip\": false,\n            \"statusCode\": \"INACTIVE\"\n        },\n        {\n            \"firstName\": \"วีระ\",\n            \"lastName\": \"ชัยวัฒน์\",\n            \"customerDate\": \"2022-08-05\",\n            \"isVip\": true,\n            \"statusCode\": \"INACTIVE\"\n        },\n        {\n            \"firstName\": \"สมหญิง\",\n            \"lastName\": \"ศิริกุล\",\n            \"customerDate\": \"2021-06-18\",\n            \"isVip\": false,\n            \"statusCode\": \"INACTIVE\"\n        },\n        {\n            \"firstName\": \"อนุชา\",\n            \"lastName\": \"ธรรมรักษ์\",\n            \"customerDate\": \"2020-09-30\",\n            \"isVip\": true,\n            \"statusCode\": \"ACTIVE\"\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/customers",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "search",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n     \"customerId\": 7,\n      \"firstName\": \"มณี\",\n    \"lastName\": \"พรรณราย\",\n    \"isVip\": false,\n     \"statusCode\": \"INACTIVE\",\n    \"createdOn\": \"2025-03-15T23:31:50.073813\",\n    \"modifiedOn\": \"2025-03-15T23:31:50.073813\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/customers/search",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "customers",
+                "search"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "   {\n        \"firstName\": \"ก้อง1\",\n        \"lastName\": \"สุวรรณ1\",\n        \"customerDate\": \"2025-03-15\",\n        \"statusCode\": \"INACTIVE\",\n        \"createdOn\": \"2025-03-15T23:31:50.073813\",\n        \"modifiedOn\": \"2025-03-15T23:31:50.073813\",\n        \"isVip\": false\n    }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/customers/6",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "customers",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/customers/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "customers",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

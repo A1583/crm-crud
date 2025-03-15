@@ -6,6 +6,7 @@ import com.crm.crud.model.request.SearchCustomerRequest;
 import com.crm.crud.repository.CustomerJdbcTemplateRepository;
 import com.crm.crud.repository.CustomerRepository;
 import com.crm.crud.repository.entity.Customer;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -63,7 +64,7 @@ public class CustomerService {
 
     private Customer findCustomerById(Integer customerId) {
         return customerRepository.findById(customerId)
-                .orElseThrow(() -> new RuntimeException(MessageFormat.format("CustomerId: {0} not found", customerId)));
+                .orElseThrow(() -> new EntityNotFoundException(MessageFormat.format("CustomerId: {0} not found", customerId)));
     }
 
     @Transactional
